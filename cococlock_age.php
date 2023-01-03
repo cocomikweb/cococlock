@@ -40,11 +40,11 @@
 		}
 
 		.d2 {
-			height: 60%;
+			height: 50%;
 		}
 
 		.d3 {
-			height: 20%;
+			height: 33%;
 		}
 
 		canvas {
@@ -55,9 +55,8 @@
 			padding: 8px;
 			object-fit: contain;
 		}
-		#canvas_3 {
-			top: -60%;
-			align-self: flex-start;
+		#canvas_7 {
+			top: -30%;
 		}
 
 		
@@ -76,6 +75,8 @@
 			<canvas id="canvas_2" class="mn"></canvas>		
 		</div>
 		<div class="d3">
+			<canvas id="canvas_8" class="age"></canvas>
+			<canvas id="canvas_7" class="ms"></canvas>
 			<canvas id="canvas_3" class="s"></canvas>
 		</div>
 	</div>
@@ -93,6 +94,8 @@
 		let ctx_4 = canvas_4.getContext("2d");
 		let ctx_5 = canvas_5.getContext("2d");
 		let ctx_6 = canvas_6.getContext("2d");
+		let ctx_7 = canvas_7.getContext("2d");
+		let ctx_8 = canvas_8.getContext("2d");
 
 		canvas_1.width = 1000;
 		canvas_2.width = 1000;
@@ -100,6 +103,8 @@
 		canvas_4.width = 1000;
 		canvas_5.width = 1000;
 		canvas_6.width = 1000;
+		canvas_7.width = 1000;
+		canvas_8.width = 1000;
 
 		canvas_1.height = 1000;
 		canvas_2.height = 1000;
@@ -107,6 +112,8 @@
 		canvas_4.height = 1000;
 		canvas_5.height = 1000;
 		canvas_6.height = 1000;
+		canvas_7.height = 1000;
+		canvas_8.height = 1000;
 
 		let bkd_clr = "hsla(0,0%,5%,1)";
 		let txt_clr = "hsla(0,0%,60%,1)";
@@ -183,9 +190,13 @@
 			ctx_1.clearRect(0,0,1000,1000);
 			ctx_2.clearRect(0,0,1000,1000);
 			ctx_3.clearRect(0,0,1000,1000);
+			ctx_7.clearRect(0,0,1000,1000);
 			ctx_4.clearRect(0,0,1000,1000);
 			ctx_5.clearRect(0,0,1000,1000);
 			ctx_6.clearRect(0,0,1000,1000);
+			ctx_8.clearRect(0,0,1000,1000);
+
+
 
 			ctx_1.font = "bold 60px arial";
 			ctx_2.font = "bold 60px arial";
@@ -193,13 +204,17 @@
 			ctx_4.font = "bold 100px arial";
 			ctx_5.font = "bold 150px arial";
 			ctx_6.font = "bold 100px arial";
+			ctx_7.font = "bold 50px arial";;
+			ctx_8.font = "bold 50px arial";
 
 			ctx_1.beginPath();
 			ctx_2.beginPath();
 			ctx_3.beginPath();
+			ctx_7.beginPath();
 			ctx_4.beginPath();
 			ctx_5.beginPath();
 			ctx_6.beginPath();
+			ctx_8.beginPath();
 
 			ctx_1.arc(500, 500, 500, 0 , 2*pi);
 			ctx_2.arc(500, 500, 500, 0 , 2*pi);
@@ -207,13 +222,17 @@
 			ctx_4.arc(500, 500, 500, 0 , 2*pi);
 			ctx_5.arc(500, 500, 500, 0 , 2*pi);
 			ctx_6.arc(500, 500, 500, 0 , 2*pi);
+			ctx_7.arc(500, 500, 300, 0 , 2*pi);
+			ctx_8.arc(500, 500, 500, 0 , 2*pi);
 
 			ctx_1.closePath();
 			ctx_2.closePath();
 			ctx_3.closePath();
+			ctx_7.closePath();
 			ctx_4.closePath();
 			ctx_5.closePath();
 			ctx_6.closePath();
+			ctx_8.closePath();
 
 			ctx_1.fillStyle = bkd_clr;
 			ctx_2.fillStyle = bkd_clr;
@@ -221,6 +240,8 @@
 			ctx_4.fillStyle = bkd_clr;
 			ctx_5.fillStyle = bkd_clr;
 			ctx_6.fillStyle = bkd_clr;
+			ctx_7.fillStyle = bkd_clr;
+			ctx_8.fillStyle = bkd_clr;
 
 			ctx_1.fill();
 			ctx_2.fill();
@@ -228,6 +249,8 @@
 			ctx_4.fill();
 			ctx_5.fill();
 			ctx_6.fill();
+			ctx_7.fill();
+			ctx_8.fill();
 
 			ctx_1.beginPath();
 			ctx_2.beginPath();
@@ -235,6 +258,8 @@
 			ctx_4.beginPath();
 			ctx_5.beginPath();
 			ctx_6.beginPath();
+			ctx_7.beginPath();
+			ctx_8.beginPath();
 
 			ctx_1.moveTo(500, 500);
 			ctx_2.moveTo(500, 500);
@@ -242,6 +267,8 @@
 			ctx_4.moveTo(500, 500);
 			ctx_5.moveTo(500, 500);
 			ctx_6.moveTo(500, 500);
+			ctx_8.moveTo(500, 500);
+			// ctx_7.moveTo(500, 500);
 
 			ctx_1.arc(500, 500, 500, 0, -mn_per_day  * pi/720    , true);
 			ctx_2.arc(500, 500, 500, 0, -s_per_day   * pi/1800   , true);
@@ -249,6 +276,10 @@
 			ctx_4.arc(500, 500, 500, 0, -h_per_day   * pi/84     , true);
 			ctx_5.arc(500, 500, 500, 0, -h_per_month * pi/372    , true);
 			ctx_6.arc(500, 500, 500, 0, -yearday * 2 * pi/365    , true);
+			ctx_8.arc(500, 500, 500, 0, -age         * pi/14610  , true);
+			// ctx_7.arc(500, 500, 500, 0, -ms          * pi/500    , true);
+			// ctx_7.arc(500, 500, 300, -ms * pi/500 , -ms * pi/500 , true);
+			ctx_7.arc(500 + (250 *  cos(-ms2 * pi/50)), 500 +  (250 * sin(-ms2 * pi/50)), 50, 0 , pi2, true);
 
 			ctx_1.closePath();
 			ctx_2.closePath();
@@ -256,6 +287,8 @@
 			ctx_4.closePath();
 			ctx_5.closePath();
 			ctx_6.closePath();
+			ctx_7.closePath();
+			ctx_8.closePath();
 
 			ctx_1.fillStyle   = "hsla(" +  mn_per_day  * 0.16   + " , 44%,22%,1)" ;
 			ctx_2.fillStyle   = "hsla(" +  s_per_day   * 0.066  + " , 44%,22%,1)" ;
@@ -263,6 +296,8 @@
 			ctx_4.fillStyle   = "hsla(" +  h_per_day   * 1.428  + " , 44%,22%,1)" ;
 			ctx_5.fillStyle   = "hsla(" +  h_per_month * 0.322  + " , 44%,22%,1)" ;
 			ctx_6.fillStyle   = "hsla(" +  yearday     * 0.657  + " , 44%,22%,1)" ;
+			ctx_7.fillStyle   = "hsla(" +  ms          * 0.24   + " , 40%,20%,1)" ;
+			ctx_8.fillStyle   = "hsla(" +  age         * 0.008  + " , 40%,20%,1)" ;
 
 			ctx_1.fill();
 			ctx_2.fill();
@@ -270,29 +305,74 @@
 			ctx_4.fill();
 			ctx_5.fill();
 			ctx_6.fill();
+			ctx_7.fill();
+			ctx_8.fill();
 
 			ctx_1.fillStyle = txt_clr;
 			ctx_2.fillStyle = txt_clr;
 			ctx_3.fillStyle = txt_clr;
+			ctx_7.fillStyle = txt_clr;
 			ctx_4.fillStyle = txt_clr;
 			ctx_5.fillStyle = txt_clr;
 			ctx_6.fillStyle = txt_clr;
+			ctx_8.fillStyle = txt_clr;
 
 			ctx_1.textAlign = "center";
 			ctx_2.textAlign = "center";
 			ctx_3.textAlign = "center";
+			ctx_7.textAlign = "center";
 			ctx_4.textAlign = "center";
 			ctx_5.textAlign = "center";
 			ctx_6.textAlign = "center";
+			ctx_8.textAlign = "center";
 
 			ctx_1.fillText( h       , 500 , 520 );
 			ctx_2.fillText( mn      , 500 , 520 );
 			ctx_3.fillText( s       , 500 , 520 );
+			ctx_7.fillText( ms3     , 500 , 520 );
 			ctx_4.fillText( day_s   , 500 , 520 );
 			ctx_5.fillText( date_s  , 500 , 520 );
 			ctx_6.fillText( yearday , 500 , 540 );
+			// ctx_8.fillText( age_y , 500 , 400 );
+			ctx_8.fillText( age_y2b , 500 , 400 );
+			ctx_8.fillText( age.toLocaleString() , 500 , 500 );
+			ctx_8.fillText( age_h.toLocaleString() , 500 , 600 );
 
-			setTimeout(k1_clock, 100);
+
+
+
+			ctx_1.beginPath();
+			ctx_1.moveTo(500, 500);
+			ctx_1.arc(500, 500, 500, -8 * pi/12, -8 * pi/12, true);
+			ctx_1.closePath();
+			ctx_1.strokeStyle = "hsla(" +  mn_per_day  * 0.16   + " , 44%,22%,1)" ;
+			ctx_1.lineWidth = 2;
+			// ctx_1.stroke();
+
+			ctx_2.beginPath();
+			ctx_2.moveTo(500, 500);
+			ctx_2.arc(500, 500, 500, -15 * pi/30, -18 * pi/30, true);
+			ctx_2.closePath();
+			ctx_2.strokeStyle = "hsla(" +  s_per_day   * 0.066  + " , 44%,22%,1)";
+			ctx_2.fillStyle = "hsla(" +  s_per_day   * 0.066  + " , 50%,30%,1)";
+			// ctx_2.fill();
+
+			ctx_6.beginPath();
+			ctx_6.moveTo(500, 500);
+			ctx_6.arc(500, 500, 500, -91 * 2 * pi/365, -92 * 2 * pi/365, true);
+			ctx_6.closePath();
+			ctx_6.fillStyle = "hsla(" +  yearday     * 0.657  + " , 44%,42%,1)"
+			// ctx_6.fill();
+
+			ctx_8.beginPath();
+			ctx_8.moveTo(500, 500);
+			ctx_8.arc(500, 500, 500, -37 * pi/40, -37 * pi/40, true);
+			ctx_8.closePath();
+			ctx_8.strokeStyle = "limegreen";
+			ctx_8.lineWidth = 1;
+			// ctx_8.stroke();
+
+			setTimeout(k1_clock, 10);
 		}
 		k1_clock();
 
