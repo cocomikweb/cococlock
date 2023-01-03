@@ -50,6 +50,7 @@
 		canvas {
 			position: relative;
 			flex: 1 0;
+			width: 100px;
 			height: 100%;
 			padding: 8px;
 			object-fit: contain;
@@ -86,14 +87,6 @@
 		let sin = x => Math.sin(x); 
 		let cos = x => Math.cos(x); 
 		let deg = pi/180;
-
-		let canvas_1 = document.querySelector("#canvas_1");
-		let canvas_2 = document.querySelector("#canvas_2");
-		let canvas_3 = document.querySelector("#canvas_3");
-		let canvas_4 = document.querySelector("#canvas_4");
-		let canvas_5 = document.querySelector("#canvas_5");
-		let canvas_6 = document.querySelector("#canvas_6");
-		let canvas_7 = document.querySelector("#canvas_7");
 
 		let ctx_1 = canvas_1.getContext("2d");
 		let ctx_2 = canvas_2.getContext("2d");
